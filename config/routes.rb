@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   #get "/", to: "movies#index"
   #send back all the movies to the client
   get "/movies", to: "movies#index"
+  get '/movies/new', to: 'movies#new'
+
+  post '/movies/new', to: 'movies#create'
   #send back one movie to the client
   get '/movies/:id', to: 'movies#show', as: 'movie'
+  
 
 end

@@ -1,0 +1,15 @@
+<h1>New recommendation</h1>
+
+<%= form_with model: @movie do |f| %>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+    <%= f.label :recommendation%>
+    <%= f.text_field :recommendation%>
+    <%= f.label :stars%>
+    <%= f.number_field :stars%>
+    <%= f.label :year%>
+    <%= f.text_field :year%>
+    <%= f.label :genre%>
+    <%= f.text_field :genre%>
+    <%= f.submit%>
+<% end %>

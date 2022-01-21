@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    before_action :load_data 
+    before_action :load_data only
     class Movie
         attr_reader :id, :name, :recommendation, :stars, :year, :genre
         def initialize (id, name, recommendation, stars, year, genre)
@@ -17,6 +17,17 @@ class MoviesController < ApplicationController
 
     def show
         @movie = @movies.find{|m| m.id == params[:id].to_i}
+    end
+
+    def new
+
+    end
+
+    def create
+        p params
+        @movies << Movie.new(5, params[:name], params[:recommendation], params[:stars].to_f, params[:year].to_i, params[:genre])
+        p @movies
+
     end
 
     def load_data
